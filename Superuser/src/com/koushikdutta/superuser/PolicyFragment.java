@@ -152,9 +152,9 @@ public class PolicyFragment extends ListContentFragment {
         builder.setTitle(up.name);
         builder.setIcon(Helper.loadPackageIcon(getActivity(), up.packageName));
         final String permissionChange = (up.policy.equalsIgnoreCase(UidPolicy.ALLOW)) ?
-        getResources().getText(R.string.deny).toString() :
-        getResources().getText(R.string.allow).toString();
-        String[] items = new String[]{permissionChange, getString(R.string.revoke_permission),
+        getResources().getText(R.string.su_deny).toString() :
+        getResources().getText(R.string.su_allow).toString();
+        String[] items = new String[] {permissionChange, getString(R.string.revoke_permission),
         getString(R.string.details)};
         builder.setItems(items, new OnClickListener() {
             @SuppressLint("HandlerLeak")
