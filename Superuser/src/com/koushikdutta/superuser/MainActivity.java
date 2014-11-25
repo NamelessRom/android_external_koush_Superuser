@@ -24,7 +24,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -57,7 +56,7 @@ public class MainActivity extends BetterListActivity {
         about.setOnMenuItemClickListener(new OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                getSupportFragmentManager()
+                getFragmentManager()
                 .beginTransaction()
                 .addToBackStack(getString(R.string.about))
                 .replace(getListContainerId(), new AboutFragment(), "content")
@@ -71,7 +70,7 @@ public class MainActivity extends BetterListActivity {
 
             @Override
             public boolean onMenuItemClick(final MenuItem item) {
-                getSupportFragmentManager()
+                getFragmentManager()
                 .beginTransaction()
                 .addToBackStack(getString(R.string.settings))
                 .replace(getListContainerId(), new SettingsFragment(), "content")
